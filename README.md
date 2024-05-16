@@ -1,6 +1,6 @@
 ## REACT-NATIVE-NAVER-MAP Sample Project
 
-이 프로젝트는 [네이버 지도 라이브러리](https://github.com/mym0404/react-native-naver-map)를 테스트하다가 이슈가 발생하여 제보하기 위해 만들어졌습니다.
+이 프로젝트는 [네이버 지도 라이브러리](https://github.com/mym0404/react-native-naver-map)를 테스트하다가 이슈가 발생하여 제보하기 위해 만들어졌습니다.  
 React-Native 0.71 버전에서 해당 라이브러리를 설치시 안드로이드 실행에 문제가 발생합니다.
 
 ### Install
