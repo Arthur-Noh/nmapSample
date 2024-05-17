@@ -37,6 +37,10 @@
 			</dict>
 		</dict>
 	</dict>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+    <string>항상 위치를 추적한다.</string>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>앱 사용중에만 위치를 추적한다.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string></string>
 	<key>UILaunchStoryboardName</key>
