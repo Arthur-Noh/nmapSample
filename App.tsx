@@ -5,9 +5,10 @@
  * @format
  */
 
-import React from 'react';
+import React, { useRef } from "react";
 import type {PropsWithChildren} from 'react';
 import {
+  Pressable,
   SafeAreaView,
   ScrollView,
   StatusBar,
@@ -24,7 +25,7 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
-import { NaverMapView } from "@mj-studio/react-native-naver-map";
+import { NaverMapView, NaverMapViewRef } from "@mj-studio/react-native-naver-map";
 
 type SectionProps = PropsWithChildren<{
   title: string;
@@ -60,14 +61,22 @@ function App(): JSX.Element {
   const { width, height } = useWindowDimensions();
   const isDarkMode = useColorScheme() === 'dark';
 
+  const nMapRef = useRef<NaverMapViewRef>(null);
+
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
+  };
+
+  const onTracking = () => {
+    console.log('추적시작');
+    nMapRef?.current?.setLocationTrackingMode('Follow');
   };
 
   return (
     <SafeAreaView style={backgroundStyle}>
       <View style={{width, height, backgroundColor: 'red'}}>
-        <NaverMapView style={{flex: 1}} />
+        <Pressable style={{ width: 30, height: 30, backgroundColor: 'blue'}} onPress={onTracking} />
+        <NaverMapView ref={nMapRef} style={{flex: 1}} />
       </View>
     </SafeAreaView>
   );
